@@ -3,15 +3,15 @@
  * Copyright (c) 17/9/2020 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
  */
 
-if (class_exists('extensionModelAuthEmailClass')) return;
+if (class_exists('kitModelAuthEmailClass')) return;
 
-class extensionModelAuthEmailClass
+class kitModelAuthEmailClass
 {
     function auth()
     {
         \CModule::IncludeModule("main");
 
-        $keys = \Bitrix\Main\Config\Option::get('extension.authemail', 'keys');
+        $keys = \Bitrix\Main\Config\Option::get('kit.authemail', 'keys');
         if ($keys) {
             $keys = unserialize($keys);
         }

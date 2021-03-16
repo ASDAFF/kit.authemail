@@ -14,7 +14,7 @@ if (!$USER->isAdmin()) {
 $app = Application::getInstance();
 $context = $app->getContext();
 $request = $context->getRequest();
-$curModuleName = 'extension.authemail';
+$curModuleName = 'kit.authemail';
 //Loc::loadMessages($context->getServer()->getDocumentRoot()."/bitrix/modules/main/options.php");
 Loc::loadMessages(__FILE__);
 

@@ -9,15 +9,15 @@ CModule::IncludeModule("main");
 CModule::AddAutoloadClasses(
 	'',
 	array(
-		"extension_authemail" => '/bitrix/modules/extension.authemail/install/index.php',
+		"kit_authemail" => '/bitrix/modules/kit.authemail/install/index.php',
 	)
 );
-$extension_model = new extension_authemail();
+$kit_model = new kit_authemail();
 
-COption::RemoveOption($extension_model->MODULE_ID);
+COption::RemoveOption($kit_model->MODULE_ID);
 
-UnRegisterModuleDependences("main","OnPageStart",$extension_model->MODULE_ID,"extensionModelAuthEmailClass","auth");
+UnRegisterModuleDependences("main","OnPageStart",$kit_model->MODULE_ID,"kitModelAuthEmailClass","auth");
 
-UnRegisterModule($extension_model->MODULE_ID);
+UnRegisterModule($kit_model->MODULE_ID);
 
 echo CAdminMessage::ShowNote(GetMessage("UNINSTALL_SUCCESS"));
